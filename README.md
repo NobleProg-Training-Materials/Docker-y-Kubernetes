@@ -12,7 +12,6 @@
 * Docker usa una arquitectura cliente-servidor
 
 ![](architecture.svg "architecture.svg"){width="" height="400"}
-\\
 
 ### Elementos principales de Docker {#main\_docker\_elements}
 
@@ -22,7 +21,6 @@
 * **registro**: repositorios públicos o privados de imágenes (distribución, componente de envío)
 * **contenedor**: creado a partir de una imagen, contiene todo lo necesario para ejecutar una aplicación (componente de ejecución)
 
-\\
 
 ### Beneficios de Docker {#benefits\_of\_docker}
 
@@ -35,7 +33,6 @@
 * escalabilidad: fácil creación de nuevos contenedores o migración a hosts más potentes
 * mejor utilización de recursos: más aplicaciones en un solo host
 
-\\
 
 ### La tecnología subyacente {#the\_underlying\_technology}
 
@@ -59,7 +56,6 @@
 
   * dos formatos soportados: **libcontainer**, LXC
 
-\\
 
 ## Comenzando {#getting\_started}
 
@@ -76,7 +72,6 @@ $ docker --version
 
 * [Pasos de instalación manual, más detalles e instrucciones para otros sistemas operativos](https://docs.docker.com/engine/installation/ubuntulinux/)
 
-\\
 
 ### Ejemplo "Hola Mundo" {#hello\_world\_example}
 
@@ -86,7 +81,6 @@ $ docker images
 $ docker ps -a
 ```
 
-\\
 
 ### Terminal bash dockerizada {#dockerized\_bash\_terminal}
 
@@ -115,7 +109,6 @@ $ ps -fe | grep $(pidof docker)
 
 * instalación de paquetes: mc, vim
 
-\\
 
 ### Investigación de contenedores e imágenes {#investigating\_containers\_and\_images}
 
@@ -158,7 +151,6 @@ $ docker top webapp
 $ docker exec webapp ps aux
 ```
 
-\\
 
 ### Limpieza y mantenimiento {#cleaning\_up\_and\_keeping\_clean}
 
@@ -199,7 +191,7 @@ $ docker rm $(docker ps -a | grep 'Exited' | awk '{print $1}')
 $ docker rmi $(docker images | grep '^<none>' | awk '{print $3}')
 ```
 
-*Ejercicios*\\
+*Ejercicios*
 
 ## Almacenamiento y persistencia de datos {#storage\_and\_data\_persistence}
 
@@ -209,7 +201,6 @@ $ docker rmi $(docker images | grep '^<none>' | awk '{print $3}')
 * no se persisten fuera del contenedor
 * se pierden si se elimina el contenedor
 
-\\
 
 ### Directamente en el host de Docker {#directly\_on\_docker\_host}
 
@@ -225,7 +216,6 @@ $ docker run -v $PWD/html:/var/www/html/:ro -d --name www --net host training:ht
 * ofrece un rendimiento casi como en metal desnudo
 * el directorio del host puede ser una unidad NFS, dispositivo formateado o cualquier recurso montable
 
-\\
 
 ### Fuera de UnionFS de Docker {#outside\_dockers\_unionfs}
 
@@ -289,11 +279,9 @@ $ docker run --rm --volumes-from data1 -v $PWD:/backup ubuntu bash -c "cd /data 
 $ docker run --rm --volumes-from data1 ubuntu ls -l /data
 ```
 
-\\
 
 ### Fuera del host de Docker {#outside\_docker\_host}
 
-\\
 
 ## Redes (Networking)
 
@@ -302,7 +290,6 @@ $ docker network --help
 $ docker network ls
 ```
 
-\\
 
 ### Red del host de Docker {#docker\_host\_network}
 
@@ -316,7 +303,6 @@ $ docker inspect www
 $ docker network inspect host
 ```
 
-\\
 
 ### Sin interfaz de red {#without\_network\_interface}
 
@@ -327,7 +313,6 @@ $ docker network inspect host
 $ docker run --name networkless --net none -it --rm ubuntu bash
 ```
 
-\\
 
 ### Red por defecto (bridge) {#default\_network\_bridge}
 
@@ -349,8 +334,6 @@ $ docker network inspect host
 * Docker **no** admite descubrimiento automático de servicios en la red bridge por defecto
 * para comunicarte por nombre en esta red, debes usar la opción heredada **docker run --link**
 
-\\
-
 ### Redes personalizadas del usuario (bridge) {#custom\_user\_networks\_bridge}
 
 ```bash
@@ -363,9 +346,6 @@ $ docker network connect net1 www
 $ docker run -itd --net net1 --name mongo --net-alias db training:mongod
 $ docker run -itd --net net1 --name apache --net-alias www --hostname httpd -p 80:80 --env=db_host=db training:httpd1
 ```
-
----
-
 
 ## Docker y Kubernates recursos
 [Docker website](https://www.docker.com)
