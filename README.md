@@ -1,4 +1,3 @@
----
 
 ## ¿Qué es Docker?
 
@@ -272,9 +271,6 @@ $ docker exec data1 chown www-data:www-data /data/file1
 $ docker run --rm --volumes-from data1
 ```
 
-Aquí tienes la continuación de la **traducción al español**, empezando desde la sección de respaldo y restauración de volúmenes:
-
----
 
 #### Respaldar y restaurar datos de volúmenes {#backup\_and\_restore\_data\_from\_volumes}
 
