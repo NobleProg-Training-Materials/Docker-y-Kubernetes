@@ -1,6 +1,6 @@
 ---
 
-## ¿Qué es Docker? {#what\_is\_docker}
+## ¿Qué es Docker?
 
 * El mundo antes de Docker:
 
@@ -373,8 +373,10 @@ $ docker run -itd --net net1 --name apache --net-alias www --hostname httpd -p 8
 
 ## Docker y Kubernates recursos
 [Docker website](https://www.docker.com)
+
 [Kubernetes website](https://kubernetes.io)
 
 [Docker y Kubernates Capacitación | NobleProg](https://www.nobleprog.mx/cursos-docker)
+
 [Video Capacitación | DaDesktop](https://www.dadesktop.com/videos-catalog/list/4e7b7e9c-2ffa-4cfa-b6a0-ccd2f3a51eaa)
 
